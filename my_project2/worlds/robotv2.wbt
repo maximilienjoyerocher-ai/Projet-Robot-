@@ -18,5 +18,27 @@ TexturedBackgroundLight {
 RectangleArena {
 }
 E-puck {
+  hidden position_0_0 6097.467832862889
+  hidden position_0_1 6708.512974544859
+  hidden rotation_1 0 1 0 2.778084898689944
+  hidden rotation_2 0 -1 0 1.928933522938968
+  translation 0 -0.4 0
+  rotation 0 0 1 1.5308003061004252
   controller "evitement"
+  groundSensorsSlot [
+    E-puckGroundSensors {
+    }
+  ]
+}
+Solid {
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 0
+      }
+      geometry Box {
+        size 0.05 1 0.001
+      }
+    }
+  ]
 }
