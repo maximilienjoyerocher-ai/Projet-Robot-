@@ -29,12 +29,16 @@ while robot.step(TIME_STEP) != -1:
     vitesse_g = 0.5 * MAX_SPEED
     vitesse_d = 0.5 * MAX_SPEED
 
-    if obstacle_gauche:
+    if obstacle_gauche and obstacle_droite:
+        # Coin ou mur de face : demi-tour sur place
+        vitesse_g = -0.5 * MAX_SPEED
+        vitesse_d = 0.5 * MAX_SPEED
+    elif obstacle_gauche:
         vitesse_g = 0.5 * MAX_SPEED
         vitesse_d = -0.5 * MAX_SPEED   # tourne à droite
     elif obstacle_droite:
         vitesse_g = -0.5 * MAX_SPEED
-        vitesse_d = 0.5 * MAX_SPEED    # tourne à gauche
+        vitesse_d = 0.5 * MAX_SPEED    # tourne à gauche   # tourne à gauche
 
     left_motor.setVelocity(vitesse_g)
     right_motor.setVelocity(vitesse_d)
